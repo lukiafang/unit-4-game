@@ -2,12 +2,14 @@
 .crystals
 {
     display: flex;
-    justify-content: 
+    justify-content: space-around;
+    align-items: center;
 
 }
 
 .crystal
 {
-    boder:2px solid red;
-    height
+    border:2px solid red;
+    height:200px;
+    width:200px;
 }

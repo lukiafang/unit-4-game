@@ -6,21 +6,35 @@ var randomNumber;
 var lost;
 
 var win;
+var previous=0;
 
-randomNumver = Math.floor(Math.ranomd()*120) +19;
+$(".crystal").attr('class','red');
+
+randomNumber = Math.floor(Math.random()*120) +19;
 
 console.log(randomNumber);
 
-$("result").html('Random Result: ')
+
+$("#result").html('Random Result: '+ randomNumber);
 
 for(var i =0; i<4; i++)
 {
-    var random = Math.floor(Math.random()*12);
+    var random = Math.floor(Math.random()*12)+1;
     var crystal = $("<div>");
-        crystal.attr("class", 'crystal', "data-random": random);
+        crystal.attr({
+            "class": 'crystal',
+            "data-random":random 
+        });
 
 
     $(".crystals").append(crystal);  
-    console.log("yeah")
-
 }
+
+$(".crystal").on('click',function() {
+    var num =parseInt($(this).attr('data-random'));
+
+    previous =+ num;
+
+    console.log(previous);
+}
+);
