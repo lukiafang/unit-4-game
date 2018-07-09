@@ -12,6 +12,14 @@ var restart =function ()
 {
     $(".crystals").empty();
 
+    var images = 
+    [
+        '../images/crystal1.jpg',
+        '../images/crystal2.jpg',
+        '../images/crystal3.jpg',
+        '../images/crystal4.jpg',
+    ];
+
     randomNumber = Math.floor(Math.random()*120) +19;
 
     console.log(randomNumber);
@@ -29,6 +37,12 @@ var restart =function ()
                 "class": 'crystal',
                 "data-random":random 
             });
+
+           crystal.css
+           ({
+               "background-image","url("../images/crystal1.jpg")" ,
+               "background-size": "cover",
+           });
     
     
         $(".crystals").append(crystal);  
