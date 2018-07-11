@@ -8,17 +8,19 @@ var lost=0;
 var win=0;
 var previous=0;
 
+
+
 var restart =function ()
 {
     $(".crystals").empty();
-
-    var images = 
-    [
-        '../images/crystal1.jpg',
-        '../images/crystal2.jpg',
-        '../images/crystal3.jpg',
-        '../images/crystal4.jpg',
-    ];
+    
+    var localImages = 
+            [
+             'assets/images/crystal1.jpg',
+             'assets/images/crystal2.jpg',
+             'assets/images/crystal3.jpg',
+             'assets/images/crystal4.jpg',
+            ]; 
 
     randomNumber = Math.floor(Math.random()*120) +19;
 
@@ -26,26 +28,35 @@ var restart =function ()
     
     
     $("#result").html('Random Result: '+ randomNumber);
+
+    
+
     
     for(var i =0; i<4; i++)
     {
         var random = Math.floor(Math.random()*12)+1;
+        
 
         
         var crystal = $("<div>");
             crystal.attr({
                 "class": 'crystal',
-                "data-random":random 
+                "data-random":random ,
+                
+                
             });
+            
+            
+            crystal.css("background-image","url('"+localImages[i]+"')");
+            
+            
+        
+        $(".crystals").append(crystal); 
 
-           crystal.css
-           ({
-               "background-image","url("../images/crystal1.jpg")" ,
-               "background-size": "cover",
-           });
-    
-    
-        $(".crystals").append(crystal);  
+
+        
+        
+       
     }
 
     $("#previous").html("Current Number: "+previous);
